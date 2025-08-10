@@ -1,0 +1,259 @@
+:root {
+    /* Colors */
+    --purple-100: hsl(254, 88%, 90%);
+    --purple-500: hsl(256, 67%, 59%);
+    --yellow-100: hsl(31, 66%, 93%);
+    --yellow-500: hsl(39, 100%, 71%);
+    /* Typography */
+    /* Body Copy */
+    --paragraph-font-size: 18px;
+    /* Font */
+    --font-family: "DM Sans";
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    body {
+        height: 100%;
+    }
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 240px .4fr .37fr 250px;
+    grid-template-rows: 200px 120px 260px 230px;
+    grid-template-areas:
+        "create reviews reviews schedule"
+        "create reviews reviews schedule"
+        "ai manage maintain schedule"
+        "ai growth followers followers";
+    gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .bento-grid {
+        grid-template-columns: 350px;
+        grid-template-rows: repeat(8, auto);
+        grid-template-areas:
+            "reviews"
+            "manage"
+            "maintain"
+            "schedule"
+            "followers"
+            "growth"
+            "create"
+            "ai";
+        margin: 20px;
+    }
+}
+
+.bento-grid div {
+    border-radius: 10px;
+    padding: 25px;
+    line-height: 1.1;
+}
+
+@media (max-width: 767px) {
+    .bento-grid div h1 {
+        font-size: 1.5em;
+    }
+}
+
+.bento-grid div img {
+    width: 200px;
+}
+
+.bento-grid div p {
+    font-size: var(--paragraph-font-size);
+}
+
+.bento-grid .create {
+    grid-area: create;
+    background-color: var(--yellow-100);
+}
+
+.bento-grid .create span {
+    color: var(--purple-500);
+}
+
+.bento-grid .create img {
+    margin-top: 20px;
+}
+
+.bento-grid .reviews {
+    grid-area: reviews;
+    background-color: var(--purple-500);
+}
+
+.bento-grid .reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bento-grid .reviews h1 {
+    color: white;
+    font-size: 4em;
+}
+
+@media (max-width: 767px) {
+    .bento-grid .reviews h1 {
+        font-size: 2em;
+    }
+}
+
+.bento-grid .reviews img {
+    margin: 20px 0;
+}
+
+.bento-grid .reviews span {
+    color: var(--yellow-500);
+}
+
+.bento-grid .reviews {
+    color: white;
+}
+
+.bento-grid .schedule {
+    grid-area: schedule;
+    background-color: var(--purple-100);
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .bento-grid .schedule {
+        text-align: center;
+    }
+}
+
+.bento-grid .schedule img {
+    height: 360px;
+    width: 360px;
+    margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+    .bento-grid .schedule img {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+.bento-grid .ai {
+    grid-area: ai;
+    background-color: var(--yellow-500);
+}
+
+.bento-grid .ai img {
+    position: relative;
+    top: 50px;
+}
+
+@media (max-width: 767px) {
+    .bento-grid .ai img {
+        top: 0;
+    }
+}
+
+.bento-grid .plats {
+    grid-area: manage;
+    background-color: white;
+}
+
+.bento-grid .plats img {
+    margin-bottom: 20px;
+}
+
+.bento-grid .consistent {
+    grid-area: maintain;
+    background-color: var(--yellow-500);
+    overflow: hidden;
+}
+
+.bento-grid .consistent img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    .bento-grid .consistent img {
+        left: 0;
+        transform: translateX(0);
+        margin-bottom: -40px;
+    }
+}
+
+.bento-grid .growth {
+    grid-area: growth;
+    background-color: white;
+}
+
+.bento-grid .growth h1 {
+    font-size: 3em;
+    font-weight: var(--font-weight-500);
+}
+
+.bento-grid .growth p {
+    margin: 20px 0;
+}
+
+.bento-grid .followers {
+    grid-area: followers;
+    background-color: var(--purple-500);
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+    .bento-grid .followers {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .bento-grid .followers img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.bento-grid .followers img {
+    margin-right: 20px;
+}
+
+.bento-grid .followers h1 {
+    color: white;
+}
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
